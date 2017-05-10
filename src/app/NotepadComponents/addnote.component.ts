@@ -1,25 +1,15 @@
 import { Component } from '@angular/core';
+//import { NoteForm } from './noteform.component';
 
 @Component({
   selector: 'addnote',
   template: `
-
-  <div class="Content">
-        <h3>Ajout d'une note</h3><br />
-        Titre <input id='title' type='text' value='Titre'/><br />
-        Catégorie <input type='choice'/>   Date <input type='textarea'/><br /><br />
-        Contenu <input type='textarea'/><br />
-        <button name='btnSave' (click)='SaveNote()'>Sauvegarder</button>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <note-form></note-form>
+    </div>
   </div>
   `,
 })
 export class AddNoteComponent  {
-
-  constructor(){
-    console.log('Constructeur note appelé');
-  }
-
-  SaveNote(){
-    console.log('Sauvegarde appelé');
-  }
 }

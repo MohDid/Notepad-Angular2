@@ -4,11 +4,9 @@ import { Component } from '@angular/core';
   selector: 'user',
   template: `
   <h1>Welcome to {{name}}</h1>
-  <h3>
     <ul class="list-inline" *ngFor="let option of menu; let i=index" (click)="OptionClicked(i)">
-        <a href="#">{{option}}</a>
+        <li><a href="#">{{option}}</a></li>
     </ul>
-  </h3>
   <div class="Content" [ngSwitch]="optClicked">
       <div *ngSwitchCase="0">
         <notes></notes>
@@ -21,6 +19,9 @@ import { Component } from '@angular/core';
       </div>
       <div *ngSwitchCase="3">
         <addcategory></addcategory>
+      </div>
+      <div *ngSwitchCase="4">
+        <about></about>
       </div>
     <!--
       <ng-container *ngSwitchCase="3">
@@ -42,7 +43,7 @@ export class UserComponent  {
       console.log('Constructeur appelé');
     this.menu = ['Notes','Catégories','Ajouter une note','Ajouter une categorie','About'];
   }
-  OptionClicked(i){
+  OptionClicked(i: any){
     this.optClicked=i;
     console.log('L\'option Menu cliquée: ' + i );
   }

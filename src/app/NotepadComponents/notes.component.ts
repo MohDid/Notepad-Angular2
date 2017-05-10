@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'notes',
@@ -11,24 +12,18 @@ import { Component } from '@angular/core';
 
   </div>
   `,
+  providers: [DataService]
 })
 export class NotesComponent  {
   notes: note[];
 
-  constructor(){
+  constructor(private _dataService: DataService){
     console.log('Constructeur note appelé');
-    this.notes = [{
-        title: 'Premiere Note',
-        content: 'abcd efgh ijkl Mnop qrst.',
-        date:'2017-05-08',
-        category:'test'
-    },
-    {
-        title: 'Deuxieme Note',
-        content: 'abcd 2 efgh ijkl Mnop qrst.',
-        date:'2017-05-09',
-        category:'test2'
-    }]
+    this.displayNotes();
+  }
+  displayNotes(){
+    this.notes = this._dataService.getNotes();
+    console.log('Notes :' + this.notes);
   }
 
 }

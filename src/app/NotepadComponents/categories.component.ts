@@ -41,11 +41,11 @@ export class CategoriesComponent  {
     }]
   }
 
-  catEdit(i){
+  catEdit(i: any){
     console.log('Catégorie ' + i + ' à modifier');
   }
 
-  catDelete(i){
+  catDelete(i: any){
     console.log('Catégorie ' + i + ' à supprimer');
   }
 }
