@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'user',
   template: `
-  <h1>Welcome to {{name}}</h1>
-    <ul class="list-inline" *ngFor="let option of menu; let i=index" (click)="OptionClicked(i)">
-        <li><a href="#">{{option}}</a></li>
-    </ul>
+  <div class="col-md-10 col-md-offset-1 text-center">
+    <h1>Welcome to {{name}}</h1>
+      <ul class="list-inline" *ngFor="let option of menu; let i=index" (click)="OptionClicked(i)">
+          <li><a href="#">{{option}}</a></li>
+      </ul>
+  </div>
   <div class="Content" [ngSwitch]="optClicked">
       <div *ngSwitchCase="0">
         <notes></notes>

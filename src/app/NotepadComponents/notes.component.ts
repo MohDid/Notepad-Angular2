@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+import { Note } from './note';
 
 @Component({
   selector: 'notes',
   template: `
-    <div *ngFor='let note of notes'>
-        <h3>{{note.title}}</h3>
-        <p>{{note.content}}</p><br />
+    <div class="panel-default col-md-10 col-md-offset-1" *ngFor='let note of notes'>
+      <div class="panel-heading"> <b>{{ note.title }}</b> <br> {{ note.category }} - {{ note.date }} </div>
+      <div class="panel-body" id="content">
+        <p id="contentText">{{ note.content }}</p>
+        <ul class="list-inline">
+          <li><a href="#" class="btn btn-primary glyphicon glyphicon-edit"></a></li>
+          <li><a href="#" class="btn btn-danger glyphicon glyphicon-remove"></a></li>
+        </ul>
+      </div>
     </div>
   <div class="Content">
 
@@ -15,7 +22,7 @@ import { DataService } from './data.service';
   providers: [DataService]
 })
 export class NotesComponent  {
-  notes: note[];
+  notes: Note[];
 
   constructor(private _dataService: DataService){
     console.log('Constructeur note appelé');
@@ -26,10 +33,4 @@ export class NotesComponent  {
     console.log('Notes :' + this.notes);
   }
 
-}
-interface note {
-  title:string;
-  content:string;
-  date:string;
-  category:string;
 }

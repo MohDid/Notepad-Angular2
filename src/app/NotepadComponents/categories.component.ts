@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'categories',
   template: `
-    <div>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table">
       <thead>
         <tr>
           <th>Id</th>
@@ -16,13 +17,11 @@ import { Component } from '@angular/core';
         <tr *ngFor='let category of categories'>
           <td>{{category.id}}</td>
           <td>{{category.name}}</td>
-          <td><button id='btnEdit' (click)='catEdit(category.id)'>Modifier</button></td>
-          <td><button id='btnDel' (click)='catDelete(category.id)'>Supprimer</button></td>
+          <td><a href="#" class="btn btn-primary glyphicon glyphicon-edit" id='btnEdit' (click)='catEdit(category.id)'>Modifier</a></td>
+          <td><a href="#" class="btn btn-danger glyphicon glyphicon-remove" id='btnDel' (click)='catDelete(category.id)'>Supprimer</a></td>
         </tr>
       </tbody>
-    </div>
-  <div class="Content">
-
+    </table>
   </div>
   `,
 })

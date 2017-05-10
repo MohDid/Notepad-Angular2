@@ -15,7 +15,7 @@ import { CategoriesComponent }  from './NotepadComponents/categories.component';
 import { AddNoteComponent }  from './NotepadComponents/addnote.component';
 import { AddCategoryComponent }  from './NotepadComponents/addcategory.component';
 import { AboutComponent }  from './NotepadComponents/about.component';
-
+import { ErrorComponent }  from './NotepadComponents/error.component';
 
 @NgModule({
   imports:      [
@@ -33,6 +33,7 @@ import { AboutComponent }  from './NotepadComponents/about.component';
     AddNoteComponent,
     AddCategoryComponent,
     AboutComponent,
+    ErrorComponent,
 
     NoteFormComponent,
     FormValidationComponent
