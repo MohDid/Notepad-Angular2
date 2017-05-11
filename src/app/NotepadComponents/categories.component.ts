@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Category } from './category';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'categories',
@@ -24,20 +26,14 @@ import { Component } from '@angular/core';
     </table>
   </div>
   `,
+  providers: [ DataService ]
 })
 export class CategoriesComponent  {
-  categories: category[];
+  categories: Category[];
 
-  constructor(){
+  constructor(private _dataService:DataService){
     console.log('Constructeur note appelé');
-    this.categories = [{
-        id:'1',
-        name: 'Test'
-    },
-    {
-        id:'2',
-        name: 'Cuisine'
-    }]
+    this.categories = this._dataService.getCategories();
   }
 
   catEdit(i: any){
@@ -47,8 +43,4 @@ export class CategoriesComponent  {
   catDelete(i: any){
     console.log('Catégorie ' + i + ' à supprimer');
   }
-}
-interface category {
-  id:string;
-  name:string;
 }

@@ -8,6 +8,7 @@ import { AppComponent }  from './app.component';
 
 import { NoteFormComponent }  from './NotepadComponents/noteform.component';
 import { FormValidationComponent }  from './NotepadComponents/formvalidation.component';
+import { CategoryFormComponent } from './NotepadComponents/categoryform.component';
 
 import { UserComponent }  from './NotepadComponents/user.component';
 import { NotesComponent }  from './NotepadComponents/notes.component';
@@ -16,6 +17,7 @@ import { AddNoteComponent }  from './NotepadComponents/addnote.component';
 import { AddCategoryComponent }  from './NotepadComponents/addcategory.component';
 import { AboutComponent }  from './NotepadComponents/about.component';
 import { ErrorComponent }  from './NotepadComponents/error.component';
+
 
 @NgModule({
   imports:      [
@@ -35,6 +37,7 @@ import { ErrorComponent }  from './NotepadComponents/error.component';
     AboutComponent,
     ErrorComponent,
 
+    CategoryFormComponent,
     NoteFormComponent,
     FormValidationComponent
   ],

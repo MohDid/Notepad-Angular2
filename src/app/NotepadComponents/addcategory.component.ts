@@ -3,12 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'addcategory',
   template: `
-
-  <div class="Content">
-        <h3>Ajout d'une catégorie</h3><br />
-        Catégorie <input type='textarea'/><br />
-        <button name='btnSave' (click)='SaveCategory()'>Sauvegarder</button>
-  </div>
+    <category-form></category-form>
   `,
 })
 export class AddCategoryComponent  {
