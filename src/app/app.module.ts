@@ -1,6 +1,8 @@
 //Composant de routage
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -22,6 +24,13 @@ import { ErrorComponent }  from './NotepadComponents/error.component';
 @NgModule({
   imports:      [
     BrowserModule,
+  /*  RouterModule.forRoot([
+      { path:'', component:UserComponent },
+      { path:'notes', component:NotesComponent },
+      { path:'categories', component:CategoriesComponent },
+      { path:'categories/add', component:AddCategoryComponent },
+      { path:'notes/add', component:AddNoteComponent },
+    ]),*/
     FormsModule,
 
     ReactiveFormsModule,

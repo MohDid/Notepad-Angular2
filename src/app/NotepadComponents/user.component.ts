@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   template: `
   <div class="col-md-10 col-md-offset-1 text-center">
     <h1>Welcome to {{name}}</h1>
-      <ul class="list-inline" *ngFor="let option of menu; let i=index" (click)="OptionClicked(i)">
-          <li><a href="#">{{option}}</a></li>
+      <ul class="nav navbar-nav list-inline" *ngFor="let option of menu; let i=index" (click)="OptionClicked(i)">
+          <li><a routerLink=myRoute>{{option}}</a></li>
       </ul>
   </div>
   <div class="Content" [ngSwitch]="optClicked">
@@ -33,13 +33,14 @@ import { Component } from '@angular/core';
     -->
     <div *ngSwitchDefault><notes></notes></div>
   </div>
+  <!--<router-outlet></router-outlet>-->
   `,
 })
 export class UserComponent  {
   name: string;
   menu: string[];
   optClicked: string;
-
+  myRoute: string;
   constructor(){
     this.name='Notepad';
       console.log('Constructeur appelé');
@@ -48,5 +49,9 @@ export class UserComponent  {
   OptionClicked(i: any){
     this.optClicked=i;
     console.log('L\'option Menu cliquée: ' + i );
+  }
+  setRoute(myRoute:string){
+    this.myRoute = myRoute;
+    return this.myRoute;
   }
 }
